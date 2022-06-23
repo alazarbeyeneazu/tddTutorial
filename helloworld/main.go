@@ -1,9 +1,24 @@
 package main
 
-import "fmt"
+const spanish = "Hola"
+const englishHelloPrifix = "Hello"
 
-func Hello(name string) string {
-	return fmt.Sprintf("Hello, %s", name)
+func greating(language string) string {
+	switch language {
+	case "spanish":
+		return spanish
+	case "English":
+		return englishHelloPrifix
+	default:
+		return englishHelloPrifix
+	}
+}
+func Hello(name string, language string) string {
+	if name == " " {
+		name = "World"
+	}
+	return greating(language) + ", " + name
+
 }
 
 func main() {
